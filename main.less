@@ -1,0 +1,33 @@
+/*
+This is like CSS, except with variables, mixins, math, nested rules, 
+and everything else you wish CSS had.
+
+Check it out.
+
+*/
+
+
+@box_color: rgb(250, 240, 245);
+@default_border_color: rgb(100, 235, 120);
+
+.has-border (@thickness : 1px, @color : @default_border_color) {
+	border: @thickness * 2 solid @color;
+}
+
+
+div {
+	width: 200px;
+	height: 200px;
+	background-color: @box_color;
+
+	margin: 15px;
+}
+
+
+.classB {
+	.has-border;
+}
+
+.classA {
+	.has-border(5px, rgb(255,0,0));
+}
